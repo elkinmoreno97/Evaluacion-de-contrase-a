@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expresiones Regulares</title>
+<meta charset="utf-8">
+ <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+<div >
+<h1>Validacion de la contraseña</h1>
+</div>	
+</header>
+<div >
+<h2>por favor ingrese una contraseña que cuente con el formato presentado a continuacion...</h2>
+<h3>1 letra Mayuscula - 3 digitos - 3 letras minusculas - 3 caracteres especiales</h3>
+<br><p>Ingrese la contraseña =</p> <input type="text" id="contra" name="contra"><br>
+<br><button onclick="validar()">Validar</button>
+<p id="respuesta"></p>
+</div>
+<script>
+function validar(){
+var contraseña="";
+var expresion="";
+contraseña=document.getElementById("contra").value;
+expresion = /^[A-Z][0-9]{3}[a-z]{3}[\W]{3}$/;
+if(expresion.test(contraseña)==true){
+document.getElementById("respuesta").innerHTML= "contraseña validada exitosamente";
+}else{
+document.getElementById("respuesta").innerHTML= "contraseña con formato no permitido";
+}
+}
+</script>
+<br><p>Elkin Moreno</p>
+</body>
+</html>
